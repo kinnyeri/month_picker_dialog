@@ -110,7 +110,7 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [pager, buildButtonBar(context)],
       ),
-      color: theme.dialogBackgroundColor,
+      color: Colors.transparent,//theme.dialogBackgroundColor,
     );
     return Theme(
       data:
@@ -146,10 +146,12 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
         FlatButton(
           onPressed: () => Navigator.pop(context, null),
           child: Text(widget.localizations.cancelButtonLabel),
+          color: Colors.black,
         ),
         FlatButton(
           onPressed: () => Navigator.pop(context, selectedDate),
           child: Text(widget.localizations.okButtonLabel),
+          color: Colors.black,
         )
       ],
     );
