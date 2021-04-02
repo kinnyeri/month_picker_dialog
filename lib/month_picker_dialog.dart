@@ -110,14 +110,15 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [pager, buildButtonBar(context)],
       ),
-      color: Colors.transparent,//theme.dialogBackgroundColor,
+      color: theme.dialogBackgroundColor,
     );
     return Theme(
       data:
           Theme.of(context).copyWith(dialogBackgroundColor: Colors.transparent),
       child: Dialog(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+
+          //mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Builder(builder: (context) {
               if (MediaQuery.of(context).orientation == Orientation.portrait) {
@@ -146,12 +147,12 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
         FlatButton(
           onPressed: () => Navigator.pop(context, null),
           child: Text(widget.localizations.cancelButtonLabel),
-          color: Colors.black,
+          textColor: Colors.black,
         ),
         FlatButton(
           onPressed: () => Navigator.pop(context, selectedDate),
           child: Text(widget.localizations.okButtonLabel),
-          color: Colors.black,
+          textColor: Colors.black,
         )
       ],
     );
