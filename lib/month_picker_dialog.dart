@@ -27,6 +27,7 @@ Future<DateTime?> showMonthPicker({
       : await GlobalMaterialLocalizations.delegate.load(locale);
   assert(localizations != null);
   return await showDialog<DateTime>(
+    barrierColor: Colors.transparent,
     context: context,
     builder: (context) => _MonthPickerDialog(
       initialDate: initialDate,
@@ -116,9 +117,9 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
       data:
           Theme.of(context).copyWith(dialogBackgroundColor: Colors.transparent),
       child: Dialog(
+        elevation: 0,
         child: Column(
-
-          //mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Builder(builder: (context) {
               if (MediaQuery.of(context).orientation == Orientation.portrait) {
@@ -162,7 +163,7 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
     return Material(
       color: theme.primaryColor,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(13.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -247,12 +248,13 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
 
   Widget buildPager(ThemeData theme, String locale) {
     return SizedBox(
-      height: 230.0,
-      width: 300.0,
+      height: 200.0,
+      width: 270.0,
       child: Theme(
         data: theme.copyWith(
           buttonTheme: ButtonThemeData(
-            padding: EdgeInsets.all(2.0),
+            hoverColor: Colors.blueAccent,
+            padding: EdgeInsets.all(1.0),
             shape: CircleBorder(),
             minWidth: 4.0,
           ),

@@ -49,7 +49,9 @@ class MonthSelectorState extends State<MonthSelector> {
   Widget _yearGridBuilder(final BuildContext context, final int page) =>
       GridView.count(
         physics: const NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(27.0),
+        crossAxisSpacing: 17,
+        mainAxisSpacing: 17,
         crossAxisCount: 4,
         children: List<Widget>.generate(
           12,
@@ -82,6 +84,9 @@ class MonthSelectorState extends State<MonthSelector> {
               : null,
       child: Text(
         DateFormat.MMM(locale).format(date),
+        style: TextStyle(
+          fontSize: 16,
+        ),
       ),
     );
   }
