@@ -50,8 +50,8 @@ class MonthSelectorState extends State<MonthSelector> {
       GridView.count(
         physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.all(27.0),
-        crossAxisSpacing: 17,
-        mainAxisSpacing: 17,
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
         crossAxisCount: 4,
         children: List<Widget>.generate(
           12,
